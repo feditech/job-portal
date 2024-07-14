@@ -1,15 +1,27 @@
 // import logo from './logo.svg';
 import "./App.css";
-// import Products from './component/Products';
 
-// import Nabar from './component/Navbar';
-// import BasicTable from './table/table';
-// import Basic from './form';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import UserLogin from "./pages/login/login";
+import JobList from "./pages/joblist";
 
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <UserLogin />,
+  },
+  {
+    path:"/jobportal",
+    element: <JobList />,
+  }
+]);
 function App() {
   return (
-    <div className="App">
-    </div>
+  
+    <RouterProvider router={router} />
   );
 }
 

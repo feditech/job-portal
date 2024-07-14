@@ -7,7 +7,6 @@ import { userlist, userLogin } from "../../slices/users";
 const UserLogin = () => {
   
   return (
-    // <div className=" xxl:h-screen w-full  flex items-center    pl-10  md:p-10 sm:p-4    bg-[#F7FAF8]">
 
     <div className=" w-full  flex items-center    ">
       {/* left */}

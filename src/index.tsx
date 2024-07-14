@@ -4,20 +4,10 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux';
 import { store } from './store';
-
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
 import "./index.css";
-import UserLogin from './pages/login/login';
+import App from './App';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <UserLogin />,
-  },
-]);
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
@@ -25,7 +15,7 @@ const root = ReactDOM.createRoot(
 root.render(
   <React.StrictMode>
     <Provider store={store}>
-    <RouterProvider router={router} />
+      <App />
     </Provider>
   </React.StrictMode>
 );
