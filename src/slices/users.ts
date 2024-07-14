@@ -4,7 +4,10 @@ const initialState = {
   loading: false,
   getClaimsListData: [],
   getuserLoading: false,
-  getclaimDataId: [],modalToggle:false,userLoader:false,userData:[]
+  getclaimDataId: [],
+  modalToggle:false,
+  userLoader:false,
+  userData:[]
 };
 
 export const userlist: any = createAsyncThunk(
@@ -53,33 +56,33 @@ const userSlice = createSlice({
       state.isEdit = payload;
     },
     modalFuc:(state:any,{ payload }:any)=>{
-state.modalToggle=payload
+      state.modalToggle=payload
     },
   },
-  extraReducers: {
-   
-    [userLogin.pending]: (state: any) => {
-      state.userLoader = true;
-    },
-    [userLogin.fulfilled]: (state: any, { payload }: any) => {
-      state.userLoader = false;
-      state.userData = payload;
-      console.log(payload, 'payload');
-    },
-    [userLogin.rejected]: (state: any) => {
-      state.userLoader = false;
-    },
-    [userlist.pending]: (state: any) => {
-      state.getuserLoading = true;
-    },
-    [userlist.fulfilled]: (state: any, { payload }: any) => {
-      state.getuserLoading = false;
-      state.getclaimDataId = payload;
-      console.log(payload, 'payload');
-    },
-    [userlist.rejected]: (state: any) => {
-      state.getuserLoading = false;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(userLogin.pending, (state: any) => {
+        state.userLoader = true;
+      })
+      .addCase(userLogin.fulfilled, (state: any, { payload }: any) => {
+        state.userLoader = false;
+        state.userData = payload;
+        console.log(payload, 'payload');
+      })
+      .addCase(userLogin.rejected, (state: any) => {
+        state.userLoader = false;
+      })
+      .addCase(userlist.pending, (state: any) => {
+        state.getuserLoading = true;
+      })
+      .addCase(userlist.fulfilled, (state: any, { payload }: any) => {
+        state.getuserLoading = false;
+        state.getclaimDataId = payload;
+        console.log(payload, 'payload');
+      })
+      .addCase(userlist.rejected, (state: any) => {
+        state.getuserLoading = false;
+      });
   },
 });
 export const {modalFuc}:any=userSlice.actions

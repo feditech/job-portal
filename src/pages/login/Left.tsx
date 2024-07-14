@@ -1,7 +1,6 @@
-import { EmailOutlined, Send, VisibilityOffOutlined } from "@material-ui/icons";
-import { KeyOutlined } from "@mui/icons-material";
-import { Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
 import React, { useEffect, useState } from "react";
+import { Button, Checkbox, FormControlLabel, TextField } from "@mui/material";
+import { KeyOutlined,EmailOutlined, Send, VisibilityOffOutlined } from "@mui/icons-material";
 //
 // import { ReactComponent as FacebookIcon } from "../../assets/icons/facebookIcon.svg";
 // import { ReactComponent as GoogleIcon } from "../../assets/icons/googleIcon.svg";
